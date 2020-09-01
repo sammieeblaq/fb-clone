@@ -1,6 +1,36 @@
 import React from "react";
 import "./Post.css";
+import { Avatar } from "@material-ui/core";
+import { ThumbUp } from "@material-ui/icons";
 
-export default function Post() {
-  return <div className="post"></div>;
+export default function Post({
+  profilePic,
+  image,
+  username,
+  timestamp,
+  message,
+}) {
+  return (
+    <div className="post">
+      <div className="post__top">
+        <Avatar src={profilePic} className="post__avatar" />
+        <div className="post__topInfo">
+          <h3>{username}</h3>
+          <p>Timestamp</p>
+        </div>
+      </div>
+      <div className="post__bottom">
+        <p>{message}</p>
+      </div>
+      <div className="post__image">
+        <img src={image} alt="" />
+      </div>
+      <div className="post__options">
+        <div className="post__options">
+          <ThumbUp />
+          <p>Like</p>
+        </div>
+      </div>
+    </div>
+  );
 }

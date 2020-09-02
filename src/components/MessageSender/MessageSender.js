@@ -12,7 +12,12 @@ export default function MessageSender() {
   const [{ user }, dispatch] = useStateValue();
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    db.collection("posts").add({
+      message: input,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      profilePic: user.photoURL,
+      image: imageUrl,
+    });
     setImageUrl("");
     setInput("");
   };

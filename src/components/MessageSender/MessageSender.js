@@ -3,6 +3,8 @@ import { Avatar } from "@material-ui/core";
 import { Videocam, PhotoLibrary, InsertEmoticon } from "@material-ui/icons";
 import "./MessageSender.css";
 import { useStateValue } from "../../context/StateProvider";
+import db from "../../firebase";
+import firebase from "firebase";
 
 export default function MessageSender() {
   const [input, setInput] = useState("");
